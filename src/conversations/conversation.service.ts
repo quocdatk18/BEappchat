@@ -7,8 +7,8 @@ import {
 import { InjectModel } from '@nestjs/mongoose';
 import { Model, Types } from 'mongoose';
 import { Conversation, ConversationDocument } from './conversation.schema';
-import { User, UserDocument } from 'src/user/user.schema';
-import { Message, MessageDocument } from 'src/message/message.schema';
+import { User, UserDocument } from '../user/user.schema';
+import { Message, MessageDocument } from '../message/message.schema';
 
 @Injectable()
 export class ConversationService {

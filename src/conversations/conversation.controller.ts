@@ -14,8 +14,8 @@ import {
 } from '@nestjs/common';
 import { ConversationService } from './conversation.service';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
-import { GetUser } from 'src/user/get-user.decorator';
-import { User } from 'src/user/user.schema';
+import { GetUser } from '../user/get-user.decorator';
+import { User } from '../user/user.schema';
 import { RestoreConversationDto } from './dto/restore-conversation.dto';
 
 @Controller('conversations')

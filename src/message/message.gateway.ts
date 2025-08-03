@@ -1,19 +1,18 @@
+import { Logger } from '@nestjs/common';
 import {
-  WebSocketGateway,
-  SubscribeMessage,
+  ConnectedSocket,
   MessageBody,
-  OnGatewayInit,
   OnGatewayConnection,
   OnGatewayDisconnect,
-  ConnectedSocket,
+  OnGatewayInit,
+  SubscribeMessage,
+  WebSocketGateway,
 } from '@nestjs/websockets';
-import { Server, Socket } from 'socket.io';
-import { MessageService } from './message.service';
-import { Logger } from '@nestjs/common';
-import { UserService } from 'src/user/user.service';
-import { ConversationService } from '../conversations/conversation.service';
-import { ConversationDocument } from '../conversations/conversation.schema';
 import { Types } from 'mongoose';
+import { Server, Socket } from 'socket.io';
+import { UserService } from '../user/user.service';
+import { ConversationService } from '../conversations/conversation.service';
+import { MessageService } from './message.service';
 
 @WebSocketGateway({
   cors: {
