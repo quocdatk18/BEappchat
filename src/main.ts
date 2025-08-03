@@ -9,8 +9,9 @@ async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   app.useGlobalPipes(new ValidationPipe());
   app.enableCors({
-    origin: '*',
-  }); // Cho phép frontend kết nối socket
+    origin: process.env.FRONTEND_URL || '*',
+    credentials: true,
+  });
   app.use(passport.initialize());
 
   // Serve static files
