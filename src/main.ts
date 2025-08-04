@@ -8,6 +8,7 @@ import * as express from 'express';
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   app.useGlobalPipes(new ValidationPipe());
+  console.log('CORS origin:', process.env.FRONTEND_URL);
   app.enableCors({
     origin: process.env.FRONTEND_URL,
     credentials: true,
